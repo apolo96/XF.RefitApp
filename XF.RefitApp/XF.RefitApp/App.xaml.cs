@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Akavache;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Reactive.Linq;
 
 using Xamarin.Forms;
 
@@ -10,9 +11,9 @@ namespace XF.RefitApp
     public partial class App : Application
     {
         public App()
-        {
+        {            
             InitializeComponent();
-
+            BlobCache.ApplicationName = "XF.RefitApp";
             MainPage = new XF.RefitApp.MainPage();
         }
 
@@ -23,7 +24,7 @@ namespace XF.RefitApp
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            
         }
 
         protected override void OnResume()
